@@ -25,6 +25,8 @@ import {
   Banknote,
   Home,
   HelpCircle,
+  Frown,
+  Accessibility,
 } from 'lucide-react'
 
 const ICONS = {
@@ -46,6 +48,10 @@ const ICONS = {
   receipt: Receipt,
   repeat: Repeat,
   wifi: Wifi,
+  // welcomer states
+  help: HelpCircle,
+  frown: Frown,
+  accessibility: Accessibility,
   // docs
   idcard: IdCard,
   creditcard: CreditCard,
