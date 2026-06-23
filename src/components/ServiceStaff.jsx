@@ -15,7 +15,7 @@ export default function ServiceStaff() {
       <RoleBar
         device={<Laptop className="h-5 w-5" aria-hidden="true" />}
         role="Service Staff"
-        sub="แล็ปท็อป · เคาน์เตอร์บริการ"
+        sub="Laptop · Service counter"
         accent="#1f2937"
         right={
           <span className="tnum rounded-lg bg-true px-2.5 py-1 text-[13px] font-extrabold text-white">
@@ -28,10 +28,10 @@ export default function ServiceStaff() {
         {/* magic moment */}
         <div className="anim-pop rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
           <div className="flex items-center gap-2 text-[14px] font-bold text-emerald-800">
-            <Zap className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden="true" /> ข้อมูลจากหน้าร้านพร้อมแล้ว
+            <Zap className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden="true" /> Front-desk context ready
           </div>
           <p className="mt-1 text-[13px] leading-relaxed text-emerald-900">
-            ลูกค้าเพิ่งนั่งลง — แต่คุณรู้เรื่องทั้งหมดแล้ว <b>ไม่ต้องถามซ้ำ ลูกค้าไม่ต้องเล่าใหม่</b>
+            The customer just sat down — and you already know everything. <b>No need to ask again. No need for them to repeat.</b>
           </p>
         </div>
 
@@ -48,7 +48,7 @@ export default function ServiceStaff() {
           </div>
 
           <div className="mt-3.5">
-            <SectionLabel>สรุปจากหน้าร้าน</SectionLabel>
+            <SectionLabel>Front-desk summary</SectionLabel>
             <div className="flex flex-wrap gap-1.5">
               {captured.map((a, i) => (
                 <span
@@ -73,14 +73,14 @@ export default function ServiceStaff() {
         {/* greeting */}
         <div className="anim-fadeUp rounded-2xl border border-blue-200 bg-blue-50 p-3.5">
           <div className="mb-1 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide text-blue-700">
-            <MessageCircle className="h-3.5 w-3.5" strokeWidth={2} aria-hidden="true" /> เปิดบทสนทนาได้เลย
+            <MessageCircle className="h-3.5 w-3.5" strokeWidth={2} aria-hidden="true" /> Open with this
           </div>
           <p className="text-[14px] italic leading-relaxed text-blue-950">“{sc.service.greeting}”</p>
         </div>
 
         {/* service checklist */}
         <div className="anim-fadeUp rounded-2xl border border-line bg-white p-4 shadow-card">
-          <SectionLabel>ดำเนินการ (แตะเพื่อทำเครื่องหมาย)</SectionLabel>
+          <SectionLabel>Steps to complete (tap to check off)</SectionLabel>
           <div className="flex flex-col gap-2">
             {sc.service.steps.map((s, i) => {
               const checked = !!state.serviceDone[i]
@@ -117,10 +117,10 @@ export default function ServiceStaff() {
         <div className="anim-fadeUp rounded-2xl border border-emerald-200 bg-white p-4 shadow-card">
           <div className="mb-2 flex items-center gap-2">
             <Wallet className="h-5 w-5 shrink-0 text-emerald-700" strokeWidth={1.75} aria-hidden="true" />
-            <span className="text-[14px] font-bold text-emerald-800">โอกาส Upsell (จากข้อมูลหน้าร้าน)</span>
+            <span className="text-[14px] font-bold text-emerald-800">Upsell opportunity (from front-desk data)</span>
           </div>
           <div className="rounded-xl bg-emerald-50 p-3">
-            <div className="text-[12px] text-emerald-700">เหตุผล: {sc.service.upsell.trigger}</div>
+            <div className="text-[12px] text-emerald-700">Trigger: {sc.service.upsell.trigger}</div>
             <p className="mt-1.5 text-[14px] italic leading-relaxed text-emerald-950">
               “{sc.service.upsell.line}”
             </p>
@@ -134,14 +134,14 @@ export default function ServiceStaff() {
         <div className="anim-fadeUp sticky bottom-0 -mx-4 mt-1 border-t border-line bg-white/95 px-4 pb-4 pt-3 backdrop-blur">
           {!allDone && (
             <p className="mb-2 text-center text-[11px] text-ink-mute">
-              ทำเครื่องหมายขั้นตอนให้ครบ หรือกดปิดเคสเพื่อดูผลลัพธ์
+              Check off all steps, or close the case to see the outcome.
             </p>
           )}
           <button
             onClick={() => dispatch({ type: 'GO', stage: 'impact' })}
             className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-true py-3.5 text-[16px] font-bold text-white shadow-pop transition active:scale-[0.98]"
           >
-            <BarChart3 className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden="true" /> {sc.service.resolution.title} → ดูผลลัพธ์
+            <BarChart3 className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden="true" /> {sc.service.resolution.title} → See outcome
           </button>
         </div>
       </div>

@@ -4,10 +4,10 @@ import { WELCOMER_SCENARIOS } from '../data/scenarios.js'
 import { Brand, Tag } from './ui.jsx'
 
 const FLOW = [
-  { Icon: Tablet, t: 'ทักทาย+วินิจฉัย' },
-  { Icon: Ticket, t: 'คิว (ถ้าตัน)' },
+  { Icon: Tablet, t: 'Greet + diagnose' },
+  { Icon: Ticket, t: 'Queue (if needed)' },
   { Icon: Laptop, t: 'Service' },
-  { Icon: BarChart3, t: 'ผลลัพธ์' },
+  { Icon: BarChart3, t: 'Impact' },
 ]
 
 export default function Intro() {
@@ -17,18 +17,17 @@ export default function Intro() {
     <div className="flex flex-1 flex-col px-5 pb-10 pt-7">
       <div className="anim-fadeUp flex items-center justify-between">
         <Brand sub="The Welcomer" />
-        <Tag color="#1f2937">ต้นแบบ</Tag>
       </div>
 
       <div className="anim-fadeUp mt-6" style={{ animationDelay: '0.05s' }}>
         <h1 className="text-[24px] font-bold leading-tight text-ink">
-          เริ่มบริการตั้งแต่
+          Start serving from
           <br />
-          ก้าวแรกที่ลูกค้าเข้าร้าน
+          the customer&rsquo;s first step
         </h1>
         <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
-          พนักงานทักทาย + วินิจฉัยบนแท็บเล็ต <b className="text-ink">ก่อนกดบัตรคิว</b> (กดคิวเฉพาะตอนต้องส่งต่อ)
-          ระบบคัดโปรฯ ที่ใช่ให้ แล้ว <b className="text-ink">ส่งข้อมูลต่อให้ Service</b> ทำงานได้ทันที
+          Staff greet and diagnose on a tablet <b className="text-ink">before issuing a queue ticket</b> (a ticket is only printed when a handoff is needed).
+          The system surfaces the right promotion, then <b className="text-ink">passes everything to Service</b> so they can act right away.
         </p>
       </div>
 
@@ -50,7 +49,7 @@ export default function Intro() {
 
       <div className="anim-fadeUp mt-8" style={{ animationDelay: '0.16s' }}>
         <div className="mb-3 text-[13px] font-bold uppercase tracking-wide text-ink-mute">
-          เลือกสถานการณ์เพื่อทดลองเล่น
+          Choose a scenario to walk through
         </div>
         <div className="flex flex-col gap-3.5">
           {WELCOMER_SCENARIOS.map((s) => (
@@ -87,10 +86,6 @@ export default function Intro() {
           ))}
         </div>
       </div>
-
-      <p className="anim-fadeUp mt-auto pt-8 text-center text-[11px] leading-relaxed text-ink-mute" style={{ animationDelay: '0.2s' }}>
-        ต้นแบบแนวคิด · True Next Gen · ข้อมูลลูกค้าเป็นตัวอย่างจำลอง
-      </p>
     </div>
   )
 }

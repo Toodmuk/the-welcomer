@@ -2,10 +2,10 @@
 import { MessageCircle, CheckCircle2, Brain, Wallet } from 'lucide-react'
 
 const KIND = {
-  say: { Icon: MessageCircle, label: 'พูดกับลูกค้า', cls: 'bg-blue-50 border-blue-200 text-blue-900' },
-  do: { Icon: CheckCircle2, label: 'ลงมือทำ', cls: 'bg-slate-50 border-slate-200 text-slate-800' },
-  insight: { Icon: Brain, label: 'ระบบวิเคราะห์', cls: 'bg-violet-50 border-violet-200 text-violet-900' },
-  upsell: { Icon: Wallet, label: 'โอกาสขาย', cls: 'bg-emerald-50 border-emerald-200 text-emerald-900' },
+  say: { Icon: MessageCircle, label: 'Say to customer', cls: 'bg-blue-50 border-blue-200 text-blue-900' },
+  do: { Icon: CheckCircle2, label: 'Take action', cls: 'bg-slate-50 border-slate-200 text-slate-800' },
+  insight: { Icon: Brain, label: 'System insight', cls: 'bg-violet-50 border-violet-200 text-violet-900' },
+  upsell: { Icon: Wallet, label: 'Sales opportunity', cls: 'bg-emerald-50 border-emerald-200 text-emerald-900' },
 }
 
 export function Suggestion({ s }) {

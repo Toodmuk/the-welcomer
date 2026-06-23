@@ -28,12 +28,6 @@ export default function App() {
   return (
     <div className="device-stage relative min-h-full w-full md:flex md:min-h-screen md:items-center md:justify-center md:p-6">
       <div className="dotgrid pointer-events-none absolute inset-0 hidden opacity-70 md:block" aria-hidden="true" />
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-5 hidden text-center text-[12px] font-semibold uppercase tracking-[0.2em] text-ink-soft/40 md:block"
-        aria-hidden="true"
-      >
-        True Next Gen · ต้นแบบแนวคิด
-      </div>
       <PasswordGate>
         <SessionProvider>
           {/* fluid height on large screens: the framed device hugs its content. */}
