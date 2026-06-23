@@ -168,13 +168,14 @@ function Home({ onStart }) {
           <Stat value="6" label="Sent to queue" />
         </div>
 
-        <button
-          onClick={onStart}
-          className="anim-fadeUp mt-auto flex w-full items-center justify-center gap-2 rounded-2xl bg-true py-4 text-[17px] font-bold text-white shadow-pop transition active:scale-[0.98]"
-          style={{ animationDelay: '0.16s' }}
-        >
-          <UserPlus className="h-5 w-5" strokeWidth={2.2} aria-hidden="true" /> Greet a customer
-        </button>
+        <div className="anim-fadeUp mt-auto pt-8" style={{ animationDelay: '0.16s' }}>
+          <button
+            onClick={onStart}
+            className="flex w-full items-center justify-center gap-2 rounded-2xl bg-true py-4 text-[17px] font-bold text-white shadow-pop transition active:scale-[0.98]"
+          >
+            <UserPlus className="h-5 w-5" strokeWidth={2.2} aria-hidden="true" /> Greet a customer
+          </button>
+        </div>
       </div>
     </div>
   )
